@@ -18,6 +18,7 @@
 		767C9A5A255908FB0032E6F0 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C9A59255908FB0032E6F0 /* SafariView.swift */; };
 		767C9A5D2559140D0032E6F0 /* FrameworkTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C9A5C2559140D0032E6F0 /* FrameworkTitleView.swift */; };
 		767C9A602559157E0032E6F0 /* XDismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C9A5F2559157E0032E6F0 /* XDismissButton.swift */; };
+		76D2E9F7255B861900129E65 /* PopupSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D2E9F6255B861900129E65 /* PopupSelectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		767C9A59255908FB0032E6F0 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		767C9A5C2559140D0032E6F0 /* FrameworkTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworkTitleView.swift; sourceTree = "<group>"; };
 		767C9A5F2559157E0032E6F0 /* XDismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XDismissButton.swift; sourceTree = "<group>"; };
+		76D2E9F6255B861900129E65 /* PopupSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupSelectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 		767C9A68255919810032E6F0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				76D2E9F5255B85F900129E65 /* AlertView */,
 				767C9A6A25591A020032E6F0 /* View */,
 				767C9A69255919880032E6F0 /* Buttons */,
 			);
@@ -144,6 +147,14 @@
 				767C9A5C2559140D0032E6F0 /* FrameworkTitleView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		76D2E9F5255B85F900129E65 /* AlertView */ = {
+			isa = PBXGroup;
+			children = (
+				76D2E9F6255B861900129E65 /* PopupSelectionView.swift */,
+			);
+			path = AlertView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +231,7 @@
 				767C9A602559157E0032E6F0 /* XDismissButton.swift in Sources */,
 				767C9A4E2557DED80032E6F0 /* FrameworkDetailView.swift in Sources */,
 				767C9A4B2557D2820032E6F0 /* FrameworkGridView.swift in Sources */,
+				76D2E9F7255B861900129E65 /* PopupSelectionView.swift in Sources */,
 				767C9A472557D1430032E6F0 /* Framework.swift in Sources */,
 				7649CC5E2557CDDC002B09FC /* Native_FrameworksApp.swift in Sources */,
 				767C9A5D2559140D0032E6F0 /* FrameworkTitleView.swift in Sources */,
