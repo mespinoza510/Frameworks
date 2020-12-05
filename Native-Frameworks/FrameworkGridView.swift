@@ -2,8 +2,7 @@ import SwiftUI
 
 struct FrameworkGridView: View {
 
-    // TODO: Probably this property can be private
-    @StateObject var viewModel = FrameworkGridViewModel()
+    @StateObject private var viewModel = FrameworkGridViewModel()
     @State private var isPressed = false
     @State private var isGridviewSelected = true
     @State private var isListviewSelected = false
@@ -26,7 +25,7 @@ struct FrameworkGridView: View {
                     .fullScreenCover(isPresented: $viewModel.isShowingDetailView) {
                         FrameworkDetailView(
                             isShowingDetailView: $viewModel.isShowingDetailView,
-                            framework: viewModel.selectedFramework ?? MockData.sampleFramework // TODO: Really you want as default value `MockData` ? and if yes, it should be in your ViewModel
+                            framework: viewModel.selectedFramework!
                         )
                     }
                 }
@@ -55,28 +54,6 @@ struct FrameworkGridView_Previews: PreviewProvider {
     static var previews: some View {
         FrameworkGridView()
             .preferredColorScheme(.dark)
-    }
-}
-
-// TODO: If it is only one one place, plase make it private, I think this can be used on more places in app and it should be in separete file
-struct EllipsisButton: View {
-    
-    @Binding var isPressed: Bool
-    
-    var body: some View {
-        Button {
-            withAnimation {
-                self.isPressed.toggle()
-            }
-        } label: {
-            Image(systemName: "ellipsis") // TODO: Stuff like image system names can be in one `enum`
-                .resizable()
-                .scaledToFit()
-                .frame(width: 30, height: 30)
-                .imageScale(.large)
-                .rotationEffect(.degrees(90))
-                .foregroundColor(Color(.label))
-        }
     }
 }
 
