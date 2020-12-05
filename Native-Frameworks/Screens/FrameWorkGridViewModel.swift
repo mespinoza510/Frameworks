@@ -3,14 +3,13 @@ import SwiftUI
 final class FrameworkGridViewModel: ObservableObject {
 
     // TODO: I think `selectedFramework` and `isShowingDetailView` can be join to one property `Freamwork` of `@Published` type and check if this value is nil ( I am not sure it will be work on 100% )
-    var selectedFramework: Framework? {
+    var selectedFramework: Framework? = MockData.sampleFramework {
         didSet { isShowingDetailView = true }
     }
     
     @Published var isShowingDetailView = false
 
-    // TODO: You dont need specify type of your array
-    let columns: [GridItem] = [GridItem(.flexible()),
+    let columns = [GridItem(.flexible()),
                                GridItem(.flexible()),
                                GridItem(.flexible())]
 }

@@ -38,7 +38,7 @@ struct FrameworkGridView: View {
                     PopupSelectionView(isGridviewSelected: $isGridviewSelected, isListviewSelected: $isListviewSelected)
                 }
                 .offset(x: UIScreen.screenWidth * 0.61, y: UIScreen.screenHeight * 0.1)
-                .background(Color.black.opacity(0.65)) // TODO: Colors like this will be probably on many places in your app, you should move it on one plalce
+                .background(Color.lightBlack)
                 .edgesIgnoringSafeArea(.all)
                 .onTapGesture {
                     withAnimation {
@@ -61,5 +61,4 @@ struct FrameworkGridView_Previews: PreviewProvider {
 extension UIScreen {
     static let screenWidth = UIScreen.main.bounds.size.width
     static let screenHeight = UIScreen.main.bounds.size.height
-    
 }

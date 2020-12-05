@@ -27,7 +27,7 @@ struct FrameworkDetailView: View {
             } label: {
                 FrameworksButton(title: "More Info")
             }
-        }.fullScreenCover(isPresented: $isShowingSafariView, content: { // TODO: You show screen `fullScreenCover` under `fullScreenCover`, I think you should call only 1 time, probably in first place in your Grid you should use list and push your screen 
+        }.sheet(isPresented: $isShowingSafariView, content: { // TODO: You show screen `fullScreenCover` under `fullScreenCover`, I think you should call only 1 time, probably in first place in your Grid you should use list and push your screen 
             SafariView(url: (URL(string: framework.urlString) ?? URL(string: "www.apple.com")!))
         })
     }
