@@ -4,7 +4,7 @@ struct XDismissButton: View {
     
     @Binding var isShowingModal: Bool
     
-    let xMarkImage = SystemImageName.xMark.rawValue
+    let xMarkImage = SystemImageName.xmark.rawValue
     
     var body: some View {
         HStack {
