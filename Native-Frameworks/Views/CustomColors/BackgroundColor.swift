@@ -5,7 +5,7 @@ struct BackgroundColor: View {
         // Setup display for custom color
         ZStack {
             Rectangle()
-                .frame(width: 300, height: 300)
+                .squareFrame(side: 300)
                 .background(Color.lightBlack)
         }
     }
@@ -18,7 +18,13 @@ struct BackgroundColor_Previews: PreviewProvider {
 }
 
 extension Color {
-    public static var lightBlack: Color {
+    static var lightBlack: Color {
         return Color.black.opacity(0.65)
+    }
+}
+
+extension View {
+    func squareFrame(side: CGFloat) -> some View {
+        return self.frame(width: side, height: side)
     }
 }

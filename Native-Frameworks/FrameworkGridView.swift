@@ -25,7 +25,7 @@ struct FrameworkGridView: View {
                     .fullScreenCover(isPresented: $viewModel.isShowingDetailView) {
                         FrameworkDetailView(
                             isShowingDetailView: $viewModel.isShowingDetailView,
-                            framework: viewModel.selectedFramework!
+                            framework: viewModel.selectedFramework
                         )
                     }
                 }

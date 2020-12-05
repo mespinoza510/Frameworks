@@ -1,6 +1,6 @@
 import Foundation
 
-public enum SystemImageName: String {
-    case ellipsis = "ellipsis"
-    case xMark = "xmark"
+enum SystemImageName: String {
+    case ellipsis
+    case xMark
 }
