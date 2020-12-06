@@ -7,6 +7,15 @@ struct FrameworkGridView: View {
     @State private var isGridviewSelected = true
     @State private var isListviewSelected = false
     
+    var selectionView: some View {
+        GeometryReader { geo in
+            PopupSelectionView(isGridviewSelected: $isGridviewSelected, isListviewSelected: $isListviewSelected)
+                .offset(x: geo.size.width * 0.61, y: geo.size.height * 0.1)
+                .background(Color.lightBlack)
+                .edgesIgnoringSafeArea(.all)
+        }
+    }
+    
     var body: some View {
         
         ZStack(alignment: .bottomTrailing) {
@@ -31,20 +40,14 @@ struct FrameworkGridView: View {
                 }
                 
             }
-            //TODO: Refactor logic to viewModel
-            // Note: Its view and it don't and I dont see any extra logic, but probably you can move it to separete property
+            
             if isPressed {
-                GeometryReader { geo in
-                    PopupSelectionView(isGridviewSelected: $isGridviewSelected, isListviewSelected: $isListviewSelected)
-                }
-                .offset(x: UIScreen.screenWidth * 0.61, y: UIScreen.screenHeight * 0.1)
-                .background(Color.lightBlack)
-                .edgesIgnoringSafeArea(.all)
-                .onTapGesture {
-                    withAnimation {
-                        self.isPressed.toggle()
+                selectionView
+                    .onTapGesture {
+                        withAnimation {
+                            self.isPressed.toggle()
+                        }
                     }
-                }
             }
         }
     }
