@@ -44,7 +44,7 @@ struct PopupSelectionView: View {
             
         }
         .padding()
-        .frame(width: 150, height: 150, alignment: .center)
+        .squareFrame(side: 150)
         .background(Color(.darkGray).opacity(0.75))
         .clipShape(ArrowShape())
     }

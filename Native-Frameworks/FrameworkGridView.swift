@@ -10,7 +10,7 @@ struct FrameworkGridView: View {
     var selectionView: some View {
         GeometryReader { geo in
             PopupSelectionView(isGridviewSelected: $isGridviewSelected, isListviewSelected: $isListviewSelected)
-                .offset(x: geo.size.width * 0.61, y: geo.size.height * 0.1)
+                .offset(x: geo.size.width * 0.61, y: geo.size.height * 0.11)
                 .background(Color.lightBlack)
                 .edgesIgnoringSafeArea(.all)
         }
@@ -58,10 +58,4 @@ struct FrameworkGridView_Previews: PreviewProvider {
         FrameworkGridView()
             .preferredColorScheme(.dark)
     }
-}
-
-// TODO: Can you replace this constants with `GeometryReader`
-extension UIScreen {
-    static let screenWidth = UIScreen.main.bounds.size.width
-    static let screenHeight = UIScreen.main.bounds.size.height
 }

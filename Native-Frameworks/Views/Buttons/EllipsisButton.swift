@@ -15,7 +15,7 @@ struct EllipsisButton: View {
             Image(systemName: ellipsisImage)
                 .resizable()
                 .scaledToFit()
-                .frame(width: 30, height: 30)
+                .squareFrame(side: 30)
                 .imageScale(.large)
                 .rotationEffect(.degrees(90))
                 .foregroundColor(Color(.label))
