@@ -11,8 +11,6 @@ struct FrameworkGridView: View {
         GeometryReader { geo in
             PopupSelectionView(isGridviewSelected: $isGridviewSelected, isListviewSelected: $isListviewSelected)
                 .offset(x: geo.size.width * 0.61, y: geo.size.height * 0.11)
-                .background(Color.lightBlack)
-                .edgesIgnoringSafeArea(.all)
         }
     }
     
@@ -43,6 +41,8 @@ struct FrameworkGridView: View {
             
             if isPressed {
                 selectionView
+                    .background(Color.lightBlack)
+                    .edgesIgnoringSafeArea(.all)
                     .onTapGesture {
                         withAnimation {
                             self.isPressed.toggle()
