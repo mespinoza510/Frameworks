@@ -22,6 +22,7 @@
 		76E9C059257B53E100F3092F /* EllipsisButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E9C058257B53E100F3092F /* EllipsisButton.swift */; };
 		76E9C05D257B554A00F3092F /* SystemImageName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E9C05C257B554A00F3092F /* SystemImageName.swift */; };
 		76E9C064257B668000F3092F /* BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E9C063257B668000F3092F /* BackgroundColor.swift */; };
+		76E9C069257CABD300F3092F /* PopupBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E9C068257CABD200F3092F /* PopupBackgroundView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		76E9C058257B53E100F3092F /* EllipsisButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EllipsisButton.swift; sourceTree = "<group>"; };
 		76E9C05C257B554A00F3092F /* SystemImageName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemImageName.swift; sourceTree = "<group>"; };
 		76E9C063257B668000F3092F /* BackgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColor.swift; sourceTree = "<group>"; };
+		76E9C068257CABD200F3092F /* PopupBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupBackgroundView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 		767C9A68255919810032E6F0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				76E9C067257CABAD00F3092F /* CustomViewModifiers */,
 				76E9C062257B665300F3092F /* CustomColors */,
 				76D2E9F5255B85F900129E65 /* AlertView */,
 				767C9A6A25591A020032E6F0 /* View */,
@@ -180,6 +183,14 @@
 				76E9C063257B668000F3092F /* BackgroundColor.swift */,
 			);
 			path = CustomColors;
+			sourceTree = "<group>";
+		};
+		76E9C067257CABAD00F3092F /* CustomViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				76E9C068257CABD200F3092F /* PopupBackgroundView.swift */,
+			);
+			path = CustomViewModifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +267,7 @@
 				767C9A562558758A0032E6F0 /* FrameWorkGridViewModel.swift in Sources */,
 				767C9A602559157E0032E6F0 /* XDismissButton.swift in Sources */,
 				767C9A4E2557DED80032E6F0 /* FrameworkDetailView.swift in Sources */,
+				76E9C069257CABD300F3092F /* PopupBackgroundView.swift in Sources */,
 				767C9A4B2557D2820032E6F0 /* FrameworkGridView.swift in Sources */,
 				76D2E9F7255B861900129E65 /* PopupSelectionView.swift in Sources */,
 				767C9A472557D1430032E6F0 /* Framework.swift in Sources */,

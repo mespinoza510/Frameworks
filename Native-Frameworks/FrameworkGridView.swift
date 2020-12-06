@@ -41,8 +41,7 @@ struct FrameworkGridView: View {
             
             if isPressed {
                 selectionView
-                    .background(Color.lightBlack)
-                    .edgesIgnoringSafeArea(.all)
+                    .popupBackground()
                     .onTapGesture {
                         withAnimation {
                             self.isPressed.toggle()
