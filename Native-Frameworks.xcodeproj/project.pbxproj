@@ -23,6 +23,7 @@
 		76E9C05D257B554A00F3092F /* SystemImageName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E9C05C257B554A00F3092F /* SystemImageName.swift */; };
 		76E9C064257B668000F3092F /* BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E9C063257B668000F3092F /* BackgroundColor.swift */; };
 		76E9C069257CABD300F3092F /* PopupBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E9C068257CABD200F3092F /* PopupBackgroundView.swift */; };
+		76E9C06E257CB31100F3092F /* FrameworkListTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E9C06D257CB31000F3092F /* FrameworkListTitleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		76E9C05C257B554A00F3092F /* SystemImageName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemImageName.swift; sourceTree = "<group>"; };
 		76E9C063257B668000F3092F /* BackgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColor.swift; sourceTree = "<group>"; };
 		76E9C068257CABD200F3092F /* PopupBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupBackgroundView.swift; sourceTree = "<group>"; };
+		76E9C06D257CB31000F3092F /* FrameworkListTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworkListTitleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				767C9A5C2559140D0032E6F0 /* FrameworkTitleView.swift */,
+				76E9C06D257CB31000F3092F /* FrameworkListTitleView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				767C9A472557D1430032E6F0 /* Framework.swift in Sources */,
 				7649CC5E2557CDDC002B09FC /* Native_FrameworksApp.swift in Sources */,
 				76E9C05D257B554A00F3092F /* SystemImageName.swift in Sources */,
+				76E9C06E257CB31100F3092F /* FrameworkListTitleView.swift in Sources */,
 				76E9C064257B668000F3092F /* BackgroundColor.swift in Sources */,
 				767C9A5D2559140D0032E6F0 /* FrameworkTitleView.swift in Sources */,
 				767C9A5A255908FB0032E6F0 /* SafariView.swift in Sources */,

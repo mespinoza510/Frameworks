@@ -3,6 +3,7 @@ import SwiftUI
 struct FrameworkDetailView: View {
     
     @Binding var isShowingDetailView: Bool
+    @Binding var isShowingGridviewSelected: Bool
     @State private var isShowingSafariView = false
     
     var framework: Framework
@@ -10,7 +11,9 @@ struct FrameworkDetailView: View {
     var body: some View {
         VStack {
             
-            XDismissButton(isShowingModal: $isShowingDetailView)
+            if isShowingGridviewSelected {
+                XDismissButton(isShowingModal: $isShowingDetailView)
+            }
             
             Spacer()
             
@@ -35,7 +38,7 @@ struct FrameworkDetailView: View {
 
 struct FrameworkDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        FrameworkDetailView(isShowingDetailView: .constant(false), framework: MockData.sampleFramework)
+        FrameworkDetailView(isShowingDetailView: .constant(false), isShowingGridviewSelected: .constant(true), framework: MockData.sampleFramework)
             .preferredColorScheme(.dark)
     }
 }

@@ -10,7 +10,7 @@ struct FrameworkGridView: View {
     var selectionView: some View {
         GeometryReader { geo in
             PopupSelectionView(isGridviewSelected: $isGridviewSelected, isListviewSelected: $isListviewSelected)
-                .offset(x: geo.size.width * 0.61, y: geo.size.height * 0.11)
+                .offset(x: geo.size.width * 0.61, y: geo.size.height * 0.1)
         }
     }
     
@@ -18,25 +18,35 @@ struct FrameworkGridView: View {
         
         ZStack(alignment: .bottomTrailing) {
             NavigationView {
-                ScrollView {
-                    LazyVGrid(columns: viewModel.columns) {
+                if isListviewSelected {
+                    List {
                         ForEach(MockData.frameworks) { framework in
-                            FrameworkTitleView(framework: framework)
-                                .onTapGesture {
-                                    viewModel.selectedFramework = framework
-                                }
+                            NavigationLink(destination: FrameworkDetailView(isShowingDetailView: $viewModel.isShowingDetailView, isShowingGridviewSelected: $isGridviewSelected, framework: framework)) {
+                                FrameworkListTitleView(framework: framework)
+                            }
+                        }
+                        .navigationTitle("🍎 Frameworks")
+                    }
+                } else {
+                    ScrollView {
+                        LazyVGrid(columns: viewModel.columns) {
+                            ForEach(MockData.frameworks) { framework in
+                                FrameworkTitleView(framework: framework)
+                                    .onTapGesture {
+                                        viewModel.selectedFramework = framework
+                                    }
+                            }
+                        }
+                        .navigationTitle("🍎 Frameworks")
+                        .navigationBarItems(trailing: EllipsisButton(isPressed: $isPressed))
+                        .fullScreenCover(isPresented: $viewModel.isShowingDetailView) {
+                            FrameworkDetailView(
+                                isShowingDetailView: $viewModel.isShowingDetailView, isShowingGridviewSelected: $isGridviewSelected,
+                                framework: viewModel.selectedFramework
+                            )
                         }
                     }
-                    .navigationTitle("🍎 Frameworks")
-                    .navigationBarItems(trailing: EllipsisButton(isPressed: $isPressed))
-                    .fullScreenCover(isPresented: $viewModel.isShowingDetailView) {
-                        FrameworkDetailView(
-                            isShowingDetailView: $viewModel.isShowingDetailView,
-                            framework: viewModel.selectedFramework
-                        )
-                    }
                 }
-                
             }
             
             if isPressed {
