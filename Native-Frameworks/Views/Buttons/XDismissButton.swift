@@ -4,6 +4,8 @@ struct XDismissButton: View {
     
     @Binding var isShowingModal: Bool
     
+    let xMarkImage = SystemImageName.xmark.rawValue
+    
     var body: some View {
         HStack {
             Spacer()
@@ -11,9 +13,9 @@ struct XDismissButton: View {
             Button {
                 isShowingModal = false
             } label: {
-                Image(systemName: "xmark")
+                Image(systemName: xMarkImage)
                     .foregroundColor(Color(.label))
-                    .frame(width: 45, height: 45)
+                    .squareFrame(side: 45)
                     .imageScale(.large)
             }
         }.padding()

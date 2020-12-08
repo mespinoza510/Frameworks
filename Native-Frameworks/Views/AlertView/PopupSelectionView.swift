@@ -5,7 +5,6 @@ struct PopupSelectionView: View {
     @Binding var isGridviewSelected: Bool
     @Binding var isListviewSelected: Bool
     
-    
     var body: some View {
         
         VStack(alignment: .center, spacing: 15) {
@@ -44,9 +43,10 @@ struct PopupSelectionView: View {
             
         }
         .padding()
-        .frame(width: 150, height: 150, alignment: .center)
-        .background(Color(.darkGray).opacity(0.75))
-        .clipShape(ArrowShape())
+        .squareFrame(side: 150)
+        .background(Color(.darkGray))
+//        .clipShape(ArrowShape()) TODO: Add arrowshape layer on top to keep rounded corners
+        .cornerRadius(20)
     }
 }
 

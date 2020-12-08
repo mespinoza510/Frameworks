@@ -19,6 +19,11 @@
 		767C9A5D2559140D0032E6F0 /* FrameworkTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C9A5C2559140D0032E6F0 /* FrameworkTitleView.swift */; };
 		767C9A602559157E0032E6F0 /* XDismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C9A5F2559157E0032E6F0 /* XDismissButton.swift */; };
 		76D2E9F7255B861900129E65 /* PopupSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D2E9F6255B861900129E65 /* PopupSelectionView.swift */; };
+		76E9C059257B53E100F3092F /* EllipsisButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E9C058257B53E100F3092F /* EllipsisButton.swift */; };
+		76E9C05D257B554A00F3092F /* SystemImageName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E9C05C257B554A00F3092F /* SystemImageName.swift */; };
+		76E9C064257B668000F3092F /* BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E9C063257B668000F3092F /* BackgroundColor.swift */; };
+		76E9C069257CABD300F3092F /* PopupBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E9C068257CABD200F3092F /* PopupBackgroundView.swift */; };
+		76E9C06E257CB31100F3092F /* FrameworkListTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E9C06D257CB31000F3092F /* FrameworkListTitleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +41,11 @@
 		767C9A5C2559140D0032E6F0 /* FrameworkTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworkTitleView.swift; sourceTree = "<group>"; };
 		767C9A5F2559157E0032E6F0 /* XDismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XDismissButton.swift; sourceTree = "<group>"; };
 		76D2E9F6255B861900129E65 /* PopupSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupSelectionView.swift; sourceTree = "<group>"; };
+		76E9C058257B53E100F3092F /* EllipsisButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EllipsisButton.swift; sourceTree = "<group>"; };
+		76E9C05C257B554A00F3092F /* SystemImageName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemImageName.swift; sourceTree = "<group>"; };
+		76E9C063257B668000F3092F /* BackgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColor.swift; sourceTree = "<group>"; };
+		76E9C068257CABD200F3092F /* PopupBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupBackgroundView.swift; sourceTree = "<group>"; };
+		76E9C06D257CB31000F3092F /* FrameworkListTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworkListTitleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,11 +78,13 @@
 		7649CC5C2557CDDC002B09FC /* Native-Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				76E9C05B257B553000F3092F /* Utilities */,
 				767C9A62255917600032E6F0 /* Model */,
 				767C9A66255918E30032E6F0 /* Screens */,
 				767C9A63255917F00032E6F0 /* UIKit Components */,
 				767C9A68255919810032E6F0 /* Views */,
 				7649CC5D2557CDDC002B09FC /* Native_FrameworksApp.swift */,
+				767C9A4A2557D2820032E6F0 /* FrameworkGridView.swift */,
 				7649CC612557CDE1002B09FC /* Assets.xcassets */,
 				7649CC662557CDE1002B09FC /* Info.plist */,
 				7649CC632557CDE1002B09FC /* Preview Content */,
@@ -117,7 +129,6 @@
 			children = (
 				767C9A642559185E0032E6F0 /* DetailView */,
 				767C9A552558758A0032E6F0 /* FrameWorkGridViewModel.swift */,
-				767C9A4A2557D2820032E6F0 /* FrameworkGridView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -125,6 +136,8 @@
 		767C9A68255919810032E6F0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				76E9C067257CABAD00F3092F /* CustomViewModifiers */,
+				76E9C062257B665300F3092F /* CustomColors */,
 				76D2E9F5255B85F900129E65 /* AlertView */,
 				767C9A6A25591A020032E6F0 /* View */,
 				767C9A69255919880032E6F0 /* Buttons */,
@@ -137,6 +150,7 @@
 			children = (
 				767C9A512557EC180032E6F0 /* FrameworksButton.swift */,
 				767C9A5F2559157E0032E6F0 /* XDismissButton.swift */,
+				76E9C058257B53E100F3092F /* EllipsisButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -145,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				767C9A5C2559140D0032E6F0 /* FrameworkTitleView.swift */,
+				76E9C06D257CB31000F3092F /* FrameworkListTitleView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -155,6 +170,30 @@
 				76D2E9F6255B861900129E65 /* PopupSelectionView.swift */,
 			);
 			path = AlertView;
+			sourceTree = "<group>";
+		};
+		76E9C05B257B553000F3092F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				76E9C05C257B554A00F3092F /* SystemImageName.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		76E9C062257B665300F3092F /* CustomColors */ = {
+			isa = PBXGroup;
+			children = (
+				76E9C063257B668000F3092F /* BackgroundColor.swift */,
+			);
+			path = CustomColors;
+			sourceTree = "<group>";
+		};
+		76E9C067257CABAD00F3092F /* CustomViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				76E9C068257CABD200F3092F /* PopupBackgroundView.swift */,
+			);
+			path = CustomViewModifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,13 +266,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				767C9A522557EC180032E6F0 /* FrameworksButton.swift in Sources */,
+				76E9C059257B53E100F3092F /* EllipsisButton.swift in Sources */,
 				767C9A562558758A0032E6F0 /* FrameWorkGridViewModel.swift in Sources */,
 				767C9A602559157E0032E6F0 /* XDismissButton.swift in Sources */,
 				767C9A4E2557DED80032E6F0 /* FrameworkDetailView.swift in Sources */,
+				76E9C069257CABD300F3092F /* PopupBackgroundView.swift in Sources */,
 				767C9A4B2557D2820032E6F0 /* FrameworkGridView.swift in Sources */,
 				76D2E9F7255B861900129E65 /* PopupSelectionView.swift in Sources */,
 				767C9A472557D1430032E6F0 /* Framework.swift in Sources */,
 				7649CC5E2557CDDC002B09FC /* Native_FrameworksApp.swift in Sources */,
+				76E9C05D257B554A00F3092F /* SystemImageName.swift in Sources */,
+				76E9C06E257CB31100F3092F /* FrameworkListTitleView.swift in Sources */,
+				76E9C064257B668000F3092F /* BackgroundColor.swift in Sources */,
 				767C9A5D2559140D0032E6F0 /* FrameworkTitleView.swift in Sources */,
 				767C9A5A255908FB0032E6F0 /* SafariView.swift in Sources */,
 			);
