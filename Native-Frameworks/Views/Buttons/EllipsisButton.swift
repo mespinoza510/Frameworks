@@ -13,18 +13,21 @@ struct EllipsisButton: View {
             }
         } label: {
             Image(systemName: ellipsisImage)
-                .resizable()
                 .scaledToFit()
-                .squareFrame(side: 30)
                 .imageScale(.large)
-                .rotationEffect(.degrees(90))
+                .squareFrame(side: 40)
                 .foregroundColor(Color(.label))
+                .clipShape(Circle())
+                .overlay(Circle().stroke(Color(.label), lineWidth: 3))
+                .rotationEffect(.degrees(90))
         }
+        .cornerRadius(20)
     }
 }
 
 struct EllipsisButton_Previews: PreviewProvider {
     static var previews: some View {
         EllipsisButton(isPressed: .constant(false))
+            .preferredColorScheme(.dark)
     }
 }

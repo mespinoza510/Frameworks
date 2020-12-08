@@ -6,12 +6,28 @@ struct FrameworkGridView: View {
     @State private var isPressed = false
     @State private var isGridviewSelected = true
     @State private var isListviewSelected = false
+    @State private var isPopupDisplayed = false
     
     var selectionView: some View {
-        GeometryReader { geo in
-            PopupSelectionView(isGridviewSelected: $isGridviewSelected, isListviewSelected: $isListviewSelected)
-                .offset(x: geo.size.width * 0.61, y: geo.size.height * 0.1)
+        HStack {
+            
+            Spacer()
+            
+            VStack {
+                PopupSelectionView(isGridviewSelected: $isGridviewSelected, isListviewSelected: $isListviewSelected)
+                
+                Spacer()
+            }
+            .padding(.top, 100)
         }
+        .frame(maxWidth: UIScreen.screenWidth, maxHeight: UIScreen.screenHeight)
+        .popupBackground()
+        .onTapGesture {
+            withAnimation {
+                self.isPressed.toggle()
+            }
+        }
+        
     }
     
     var body: some View {
@@ -51,20 +67,25 @@ struct FrameworkGridView: View {
             
             if isPressed {
                 selectionView
-                    .popupBackground()
-                    .onTapGesture {
-                        withAnimation {
-                            self.isPressed.toggle()
-                        }
-                    }
             }
         }
     }
 }
 
 struct FrameworkGridView_Previews: PreviewProvider {
+    static let deviceName = ["iPhone 12 Pro", "iPhone SE (2nd generation)", "iPhone 11 Pro Max"]
     static var previews: some View {
-        FrameworkGridView()
-            .preferredColorScheme(.dark)
+        ForEach(deviceName, id: \.self) { device in
+            FrameworkGridView()
+                .previewDevice(PreviewDevice(rawValue: device))
+                .previewDisplayName(device)
+                .preferredColorScheme(.dark)
+        }
     }
+}
+
+extension UIScreen {
+    static let screenSize = UIScreen.main.bounds.size
+    static let screenWidth = screenSize.width
+    static let screenHeight = screenSize.height
 }
