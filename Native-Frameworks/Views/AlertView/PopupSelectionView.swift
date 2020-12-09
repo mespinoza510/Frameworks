@@ -20,7 +20,6 @@ struct PopupSelectionView: View {
             VStack(alignment: .center, spacing: 15) {
                 
                 Button {
-                    self.presentation.wrappedValue.dismiss()
                     self.isGridviewSelected = true
                     self.isListviewSelected = false
                 } label: {
@@ -39,7 +38,6 @@ struct PopupSelectionView: View {
                     .background(Color(.white))
                 
                 Button {
-                    self.presentation.wrappedValue.dismiss()
                     self.isListviewSelected = true
                     self.isGridviewSelected = false
                 } label: {
