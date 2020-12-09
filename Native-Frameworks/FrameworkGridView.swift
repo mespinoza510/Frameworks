@@ -20,14 +20,13 @@ struct FrameworkGridView: View {
             }
             .padding(.top, 100)
         }
-        .frame(maxWidth: UIScreen.screenWidth, maxHeight: UIScreen.screenHeight)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .popupBackground()
         .onTapGesture {
             withAnimation {
                 self.isPressed.toggle()
             }
         }
-        
     }
     
     var body: some View {
@@ -73,7 +72,9 @@ struct FrameworkGridView: View {
 }
 
 struct FrameworkGridView_Previews: PreviewProvider {
+    
     static let deviceName = ["iPhone 12 Pro", "iPhone SE (2nd generation)", "iPhone 11 Pro Max"]
+    
     static var previews: some View {
         ForEach(deviceName, id: \.self) { device in
             FrameworkGridView()
@@ -82,10 +83,4 @@ struct FrameworkGridView_Previews: PreviewProvider {
                 .preferredColorScheme(.dark)
         }
     }
-}
-
-extension UIScreen {
-    static let screenSize = UIScreen.main.bounds.size
-    static let screenWidth = screenSize.width
-    static let screenHeight = screenSize.height
 }

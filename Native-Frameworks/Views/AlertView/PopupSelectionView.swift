@@ -4,49 +4,60 @@ struct PopupSelectionView: View {
     
     @Binding var isGridviewSelected: Bool
     @Binding var isListviewSelected: Bool
+    @Environment(\.presentationMode) var presentation
     
     var body: some View {
         
-        VStack(alignment: .center, spacing: 15) {
+        VStack {
             
-            Button {
-                self.isGridviewSelected = true
-                self.isListviewSelected = false
-            } label: {
-                HStack(alignment: .bottom) {
-                    if isGridviewSelected {
-                        CheckmarkView()
-                        ButtonTitleView(title: "Grid View")
-                    } else {
-                        ButtonTitleView(title: "Grid View")
+            ArrowShape()
+                .fill(Color(.darkGray))
+                .squareFrame(side: 25)
+                .clipShape(ArrowShape())
+                .offset(x: 40, y: 10)
+            
+            
+            VStack(alignment: .center, spacing: 15) {
+                
+                Button {
+                    self.presentation.wrappedValue.dismiss()
+                    self.isGridviewSelected = true
+                    self.isListviewSelected = false
+                } label: {
+                    HStack(alignment: .bottom) {
+                        if isGridviewSelected {
+                            CheckmarkView()
+                            ButtonTitleView(title: "Grid View")
+                        } else {
+                            ButtonTitleView(title: "Grid View")
+                        }
+                    }
+                }
+                
+                Divider()
+                    .frame(width: 195)
+                    .background(Color(.white))
+                
+                Button {
+                    self.presentation.wrappedValue.dismiss()
+                    self.isListviewSelected = true
+                    self.isGridviewSelected = false
+                } label: {
+                    HStack(alignment: .bottom) {
+                        if isListviewSelected {
+                            CheckmarkView()
+                            ButtonTitleView(title: "List view")
+                        } else {
+                            ButtonTitleView(title: "List View")
+                        }
                     }
                 }
             }
-            
-            Divider()
-                .frame(width: 195)
-                .background(Color(.white))
-            
-            Button {
-                self.isListviewSelected = true
-                self.isGridviewSelected = false
-            } label: {
-                HStack(alignment: .bottom) {
-                    if isListviewSelected {
-                        CheckmarkView()
-                        ButtonTitleView(title: "List view")
-                    } else {
-                        ButtonTitleView(title: "List View")
-                    }
-                }
-            }
-            
+            .padding()
+            .squareFrame(side: 150)
+            .background(Color(.darkGray))
+            .cornerRadius(20)
         }
-        .padding()
-        .squareFrame(side: 150)
-        .background(Color(.darkGray))
-//        .clipShape(ArrowShape()) TODO: Add arrowshape layer on top to keep rounded corners
-        .cornerRadius(20)
     }
 }
 
@@ -61,7 +72,7 @@ struct CheckmarkView: View {
     var body: some View {
         Image(systemName: "checkmark")
             .resizable()
-            .frame(width: 15, height: 15)
+            .squareFrame(side: 15)
             .font(.body)
             .foregroundColor(.green)
             .imageScale(.medium)
@@ -119,19 +130,14 @@ struct ListviewButton: View {
 }
 
 struct ArrowShape: Shape {
-    
     func path(in rect: CGRect) -> Path {
+        var path = Path()
         
-        return Path { path in
-            path.move(to: CGPoint(x: 0, y: 10))
-            path.addLine(to: CGPoint(x: rect.width - 40, y: 10))
-            path.addLine(to: CGPoint(x: rect.width - 30, y: 0))
-            path.addLine(to: CGPoint(x: rect.width - 20, y: 10))
-            path.addLine(to: CGPoint(x: rect.width, y: 10))
-            
-            path.addLine(to: CGPoint(x: rect.width, y: rect.height - 10))
-            path.addLine(to: CGPoint(x: 0, y: rect.height - 10))
-            
-        }
+        path.move(to: CGPoint(x: rect.midX, y: rect.minY))
+        path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
+        path.addLine(to: CGPoint(x: rect.midX, y: rect.minY))
+
+        return path
     }
 }
